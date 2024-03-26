@@ -6,6 +6,7 @@ import mongoose from 'mongoose'
 import cookieParser from 'cookie-parser'
 import cors from 'cors'
 import dotenv from 'dotenv'
+import serverless from 'serverless-http'
 
 // Import routes
 import authRoute from './routes/auth.route.js'
@@ -52,8 +53,10 @@ app.use((err, req, res, next) => {
     res.status(errorStatus).send(errorMessage)
 })
 
-app.listen(8800, () => {
-    connect()
-    console.log('Backend server is running!!')
-})
+// app.listen(8800, () => {
+//     connect()
+//     console.log('Backend server is running!!')
+// })
+
+export const handler = serverless(app)
 

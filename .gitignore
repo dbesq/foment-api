@@ -24,5 +24,6 @@ dist-ssr
 *.sln
 *.sw?
 
+functions
 .env
 ZZNotes.txt
