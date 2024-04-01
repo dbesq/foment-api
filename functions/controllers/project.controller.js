@@ -1,5 +1,5 @@
-import Project from '../../models/project.model.js'
-import createError from '../../utils/createError.js'
+import Project from '../models/project.model.js'
+import createError from '../utils/createError.js'
 
 export const createProject = async (req, res, next) => {
     if (!req.isSeller)

@@ -1,6 +1,6 @@
 import express from 'express' 
-import { verifyToken } from '../../middleware/jwt.js'
-import { createProject, deleteProject, getProject, getProjects } from '../../controllers/project.controller.js'
+import { verifyToken } from '../middleware/jwt.js'
+import { createProject, deleteProject, getProject, getProjects } from '../controllers/project.controller.js'
 
 const router = express.Router()
 

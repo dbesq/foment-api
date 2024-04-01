@@ -1,6 +1,6 @@
-import Order from '../../models/order.model.js'
-import Project from '../../models/project.model.js'
-import createError from '../../utils/createError.js'
+import Order from '../models/order.model.js'
+import Project from '../models/project.model.js'
+import createError from '../utils/createError.js'
 import Stripe from 'stripe' 
 
 export const confirm = async (req, res, next) => {    

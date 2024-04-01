@@ -1,9 +1,9 @@
 import bcrypt from 'bcrypt' 
 import jwt from 'jsonwebtoken'
 
-import User from '../../models/user.model.js'
+import User from '../models/user.model.js'
 
-import createError from '../../utils/createError.js'
+import createError from '../utils/createError.js'
 
 export const register = async (req, res, next) => {
     try {

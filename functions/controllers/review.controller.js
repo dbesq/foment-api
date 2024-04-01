@@ -1,6 +1,6 @@
-import Project from '../../models/project.model.js'
-import Review from '../../models/review.model.js'
-import createError from '../../utils/createError.js'
+import Project from '../models/project.model.js'
+import Review from '../models/review.model.js'
+import createError from '../utils/createError.js'
 
 
 export const createReview = async (req, res, next) => {

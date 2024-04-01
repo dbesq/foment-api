@@ -1,6 +1,6 @@
-import Conversation from '../../models/conversation.model.js'
-import Message from '../../models/message.model.js'
-import createError from "../../utils/createError.js"
+import Conversation from '../models/conversation.model.js'
+import Message from '../models/message.model.js'
+import createError from "../utils/createError.js"
 
 export const createMessage = async (req, res, next) => {
     const newMessage = new Message({
