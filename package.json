@@ -2,10 +2,10 @@
   "name": "api",
   "version": "1.0.0",
   "description": "",
-  "main": "functions/server.js",
+  "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon functions/server.js",
+    "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "netlify deploy --prod"
   },
