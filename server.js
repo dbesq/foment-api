@@ -21,6 +21,8 @@ const app = express()
 
 dotenv.config()
 
+const port = process.env.PORT || 8800
+
 // Connect to DB
 const connect = async () => {
     try {
@@ -37,13 +39,13 @@ app.use(express.json())
 app.use(cookieParser())
 
 // Routes
-app.use('/.netlify/functions/api/auth', authRoute)
-app.use('/.netlify/functions/api/conversations', conversationRoute)
-app.use('/.netlify/functions/api/messages', messageRoute)
-app.use('/.netlify/functions/api/orders', orderRoute)
-app.use('/.netlify/functions/api/projects', projectRoute)
-app.use('/.netlify/functions/api/reviews', reviewRoute)
-app.use('/.netlify/functions/api/users', userRoute)
+app.use('/api/auth', authRoute)
+app.use('/api/conversations', conversationRoute)
+app.use('/api/messages', messageRoute)
+app.use('/api/orders', orderRoute)
+app.use('/api/projects', projectRoute)
+app.use('/api/reviews', reviewRoute)
+app.use('/api/users', userRoute)
 
 // Error handling middleware
 app.use((err, req, res, next) => {
@@ -53,10 +55,10 @@ app.use((err, req, res, next) => {
     res.status(errorStatus).send(errorMessage)
 })
 
-// app.listen(8800, () => {
-//     connect()
-//     console.log('Backend server is running!!')
-// })
+app.listen(port, () => {
+    connect()
+    console.log(`Backend server is running!! on port ${port}`)
+})
 
-module.exports.handler = serverless(app)
+
 
