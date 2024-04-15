@@ -23,16 +23,6 @@ dotenv.config()
 
 const port = process.env.PORT || 8800
 
-// Connect to DB
-const connect = async () => {
-    try {
-        await mongoose.connect(process.env.MONGO) 
-        console.log('Connected to MongoDB')
-    } catch (error) {
-        console.log(error)
-    }
-}
-
 // Middleware
 app.use(cors({ origin: 'http://localhost:5173', credentials: true }))
 app.use(express.json())
@@ -54,6 +44,16 @@ app.use((err, req, res, next) => {
 
     res.status(errorStatus).send(errorMessage)
 })
+
+// Connect to DB
+const connect = async () => {
+    try {
+        await mongoose.connect(process.env.MONGO) 
+        console.log('Connected to MongoDB')
+    } catch (error) {
+        console.log(error)
+    }
+}
 
 app.listen(port, () => {
     connect()
