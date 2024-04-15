@@ -22,7 +22,9 @@ const app = express()
 dotenv.config()
 
 const port = process.env.PORT || 8800
-const mongo = process.env.MONGO.toString()
+const mongo = process.env.MONGO
+console.log(typeof mongo)
+console.log(mongo)
 
 // Middleware
 app.use(cors({ origin: 'http://localhost:5173', credentials: true }))
