@@ -40,15 +40,10 @@ export const login = async (req, res, next) => {
             process.env.JWT_KEY
         )
 
-        // Return user data other than password
         const { password, ...info } = user._doc
-        res.status(200).json({
-            data: [
-                info,
-                { token }
-            ],
-            message: "Logged In",
-        })
+        res.cookie('accessToken', token, {
+            httpOnly: true
+        }).status(200).send(info)
         
     } catch (error) {
         next(err)
@@ -56,7 +51,7 @@ export const login = async (req, res, next) => {
 }
 
 export const logout = async (req, res) => {
-    res.clearCookie('token', {
+    res.clearCookie('accessToken', {
         sameSite: 'none',
         secure: true,
     })

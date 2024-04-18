@@ -2,8 +2,6 @@ import jwt from 'jsonwebtoken'
 import createError from '../utils/createError.js'
 
 export const verifyToken = async (req, res, next) => {
-    console.log('cookies: ')
-    console.log(req.cookies)
     const token = req.cookies.accessToken
     if(!token) return next(createError(401, 'You are not authenticated.'))
     
