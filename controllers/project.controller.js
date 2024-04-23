@@ -9,6 +9,8 @@ export const createProject = async (req, res, next) => {
       userId: req.userId,
       ...req.body,
     });
+
+    console.log(newProject)
   
     try {
       const savedProject = await newProject.save();

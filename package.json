@@ -5,7 +5,8 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
@@ -27,6 +28,7 @@
     "netlify-lambda": "^2.0.16",
     "path": "^0.12.7",
     "serverless-http": "^3.2.0",
-    "stripe": "^14.22.0"
+    "stripe": "^14.22.0",
+    "validator": "^13.11.0"
   }
 }
